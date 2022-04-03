@@ -19,3 +19,16 @@ body {
     margin-top: 40vh;
     font-size: xx-large;
 }
+
+.dots {
+    border-right: .12em solid orange;
+    white-space: nowrap;
+    letter-spacing: .12em;
+    animation: blink-caret 1s step-end infinite; 
+  }
+  
+  /* cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
