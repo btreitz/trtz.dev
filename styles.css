@@ -1,0 +1,21 @@
+html {
+    font-family: 'Courier New', monospace;
+    min-height: 100%;
+    background-color: #000000;
+    background-image: linear-gradient(180deg, #000000 0%, #2d3436 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.under-construction-banner {
+    color: white;
+    text-align: center;
+    margin-top: 40vh;
+    font-size: xx-large;
+}
