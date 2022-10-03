@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import ProjectCard from "../components/projectCard";
 
 const Projects: NextPage = () => {

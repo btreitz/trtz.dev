@@ -1,0 +1,12 @@
+{
+	"name": "test",
+	"github-url": "https://github.com/btreitz/investment-journey-calculator",
+	"readme": "https://github.com/btreitz/investment-journey-calculator/blob/main/README.md",
+	"url": "https://investmentjourneycalc.com/",
+	"stack": {
+		"Backend": ["Java 11", "Spring Boot 2"],
+		"Frontend": ["JavaScript"],
+		"Testing": "JUnit 5 Jupiter",
+		"Deployment & Hosting": "Railway"
+	}
+}
