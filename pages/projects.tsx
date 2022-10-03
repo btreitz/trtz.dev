@@ -1,9 +1,21 @@
-import { NextPage } from "next";
+import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Footer from "../components/footer";
 import ProjectCard from "../components/projectCard";
 
-const Projects: NextPage = () => {
+export type ProjectData = {
+	name: string;
+	"github-url": string;
+	"readme-url": string;
+	"readme-text"?: string;
+	url?: string;
+	stack: {
+		[key: string]: string;
+	}[];
+};
+
+const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+	console.log(projectsData);
 	return (
 		<div className="min-h-screen relative">
 			<Head>
@@ -17,15 +29,44 @@ const Projects: NextPage = () => {
 						<div className="border-b border-gray-300 pt-5 py-2 mb-10">
 							<div className=" text-2xl">Projects</div>
 						</div>
-						<ProjectCard name={"Project 1"} />
-						<ProjectCard name={"Project 2"} />
-						<ProjectCard name={"Project 3"} />
+						{projectsData.map((project, index) => (
+							<ProjectCard
+								key={index}
+								name={project.name}
+								github-url={project["github-url"]}
+								stack={project.stack}
+								readme-text={project["readme-text"]}
+								url={project.url}
+							/>
+						))}
 					</div>
 				</div>
 			</main>
 			<Footer />
 		</div>
 	);
+};
+
+export const getStaticProps = async () => {
+	// Fetch json file with included projects
+	const projectsNames: string[] = require("../projectData/projects.json");
+
+	const projects: ProjectData[] = projectsNames.map((name) => require(`../projectData/${name}.json`));
+	// Get Readme Text from url if it exists
+	const projectsData: ProjectData[] = await Promise.all(
+		projects.map(async (projectData) => {
+			if (projectData["readme-url"]) {
+				const res = await fetch(projectData["readme-url"]);
+				const readmeText = await res.text();
+				projectData["readme-text"] = readmeText;
+				return projectData;
+			}
+			return projectData;
+		})
+	);
+	return {
+		props: { projectsData },
+	};
 };
 
 export default Projects;

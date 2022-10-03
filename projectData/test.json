@@ -1,7 +1,7 @@
 {
 	"name": "test",
 	"github-url": "https://github.com/btreitz/investment-journey-calculator",
-	"readme": "https://github.com/btreitz/investment-journey-calculator/blob/main/README.md",
+	"readme-url": "https://raw.githubusercontent.com/btreitz/investment-journey-calculator/main/README.md",
 	"url": "https://investmentjourneycalc.com/",
 	"stack": {
 		"Backend": ["Java 11", "Spring Boot 2"],
