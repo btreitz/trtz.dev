@@ -22,6 +22,9 @@ module.exports = {
 			animation: {
 				"infinite-blink": "blink-caret 1s step-end infinite",
 			},
+			height: {
+				"project-card": "30rem/* 480px */",
+			},
 		},
 	},
 	plugins: [],
