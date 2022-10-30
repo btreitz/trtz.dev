@@ -5,17 +5,16 @@ import ProjectCard from "../components/projectCard";
 
 export type ProjectData = {
 	name: string;
+	api?: string;
+	description?: string;
 	"github-url": string;
-	"readme-url": string;
-	"readme-text"?: string;
 	url?: string;
 	stack: {
-		[key: string]: string;
+		[key: string]: string[];
 	}[];
 };
 
 const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	console.log(projectsData);
 	return (
 		<div className="min-h-screen relative">
 			<Head>
@@ -33,9 +32,9 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 							<ProjectCard
 								key={index}
 								name={project.name}
+								description={project.description}
 								github-url={project["github-url"]}
 								stack={project.stack}
-								readme-text={project["readme-text"]}
 								url={project.url}
 							/>
 						))}
@@ -52,13 +51,14 @@ export const getStaticProps = async () => {
 	const projectsNames: string[] = require("../projectData/projects.json");
 
 	const projects: ProjectData[] = projectsNames.map((name) => require(`../projectData/${name}.json`));
-	// Get Readme Text from url if it exists
+	// Get Description text from api-url if it exists
 	const projectsData: ProjectData[] = await Promise.all(
 		projects.map(async (projectData) => {
-			if (projectData["readme-url"]) {
-				const res = await fetch(projectData["readme-url"]);
-				const readmeText = await res.text();
-				projectData["readme-text"] = readmeText;
+			if (projectData.api) {
+				const res = await fetch(projectData.api);
+				const resData = await res.json();
+				const description = resData.description;
+				projectData.description = description;
 				return projectData;
 			}
 			return projectData;
