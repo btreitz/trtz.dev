@@ -1,3 +1,7 @@
+import { AiFillGithub } from "react-icons/ai";
+import { FaGlobeAmericas } from "react-icons/fa";
+import IconLink from "./iconLink";
+
 type ProjectCardProps = {
 	name: string;
 	description?: string;
@@ -10,8 +14,26 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
-		<div className=" mt-7 rounded-xl h-project-card bg-gray-100 bg-cover border p-4 hover:drop-shadow transition">
-			<div className=" text-2xl border-b border-gray-300 pb-2">{name}</div>
+		<div className=" mt-7 rounded-xl h-project-card border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
+			<div className=" border-b border-gray-300 pb-2 flex flex-row justify-between">
+				<div className="text-2xl">{name}</div>
+				<ul className="flex flex-row justify-center gap-1">
+					<IconLink
+						href={githubUrl}
+						icon={<AiFillGithub size={"1.5em"} />}
+						twStyles={" hover:bg-gray-200"}
+						title={" Checkout <Code />"}
+					/>
+					{url && (
+						<IconLink
+							href={url}
+							icon={<FaGlobeAmericas size={"1.5em"} />}
+							twStyles={" hover:bg-gray-200"}
+							title={"Website"}
+						/>
+					)}
+				</ul>
+			</div>
 			<div className=" flex flex-row pt-4 gap-5">
 				<div className=" flex-1">
 					{description && (

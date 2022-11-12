@@ -5,6 +5,9 @@ module.exports = {
 		extend: {
 			colors: {
 				"grad-orange": "#2d3436",
+				"dark-blue": "#10101a",
+				"light-beige": "#c4c4c4",
+				"card-bg": "rgba(35,37,49,.5)",
 			},
 			fontFamily: {
 				"mono-code": "Courier New, monospace",
