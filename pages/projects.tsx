@@ -30,20 +30,22 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 						<div className="border-b border-gray-300 pt-5 py-2 mb-10 flex flex-row justify-between">
 							<div className=" text-2xl">trtz.dev</div>
 							<ul className="flex flex-row justify-center gap-1">
-								<IconLink href="https://github.com/btreitz" icon={<AiFillGithub size={"1.5em"} />} />
 								<IconLink href="https://linkedin.com/in/btreitz" icon={<AiFillLinkedin size={"1.5em"} />} />
+								<IconLink href="https://github.com/btreitz" icon={<AiFillGithub size={"1.5em"} />} />
 							</ul>
 						</div>
-						{projectsData.map((project, index) => (
-							<ProjectCard
-								key={index}
-								name={project.name}
-								description={project.description}
-								github-url={project["github-url"]}
-								stack={project.stack}
-								url={project.url}
-							/>
-						))}
+						<div className=" grid grid-flow-row auto-rows-fr">
+							{projectsData.map((project, index) => (
+								<ProjectCard
+									key={index}
+									name={project.name}
+									description={project.description}
+									github-url={project["github-url"]}
+									stack={project.stack}
+									url={project.url}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</main>

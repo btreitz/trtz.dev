@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
-		<div className=" mt-7 rounded-xl h-project-card border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
+		<div className=" mt-7 rounded-xl pb-6 border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
 			<div className=" border-b border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
 				<ul className="flex flex-row justify-center gap-1">
@@ -38,7 +38,7 @@ const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }:
 				<div className=" flex-1">
 					{description && (
 						<div>
-							<div className=" text-xl">Description</div>
+							<div className=" text-xl">About</div>
 							<div className=" text-gray-500 mt-2">{description}</div>
 						</div>
 					)}
@@ -46,19 +46,18 @@ const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }:
 				<div className=" flex-1">
 					{Object.keys(stack).length > 0 && (
 						<div>
-							<div className=" text-xl">Stack</div>
 							{Object.entries(stack).map(([key, values]) => (
-								<div className=" mt-2" key={key}>
-									<div className=" font-bol text-lg" key={key}>
+								<div className=" mb-3" key={key}>
+									<div className=" font-bol text-lg mb-2" key={key}>
 										{key}
 									</div>
-									<ul className=" list-disc list-inside">
+									<div className=" flex flex-row flex-wrap gap-2">
 										{(values as unknown as string[]).map((item) => (
-											<li className=" text-gray-500" key={item}>
+											<div className=" px-2 py-1 bg-cyan-900 rounded-md hover:bg-cyan-800" key={item}>
 												{item}
-											</li>
+											</div>
 										))}
-									</ul>
+									</div>
 								</div>
 							))}
 						</div>
