@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
-		<div className=" mt-7 rounded-xl pb-6 border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
+		<div className=" rounded-xl pb-6 border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
 			<div className=" border-b border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
 				<ul className="flex flex-row justify-center gap-1">

@@ -26,6 +26,12 @@ module.exports = {
 				"infinite-blink": "blink-caret 1s step-end infinite",
 			},
 		},
+		screens: {
+			phone: { max: "639px" },
+			tablet: { min: "640px" },
+			laptop: { min: "1024px" },
+			desktop: { min: "1280px" },
+		},
 	},
 	plugins: [],
 };

@@ -26,7 +26,7 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 			</Head>
 			<main className=" pb-24">
 				<div className="w-full">
-					<div className=" w-7/12 mx-auto">
+					<div className=" mx-auto desktop:max-w-3xl laptop:w-8/12 tablet:w-9/12 phone:w-11/12">
 						<div className="border-b border-gray-300 pt-5 py-2 mb-10 flex flex-row justify-between">
 							<div className=" text-2xl">trtz.dev</div>
 							<ul className="flex flex-row justify-center gap-1">
@@ -34,7 +34,7 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 								<IconLink href="https://github.com/btreitz" icon={<AiFillGithub size={"1.5em"} />} />
 							</ul>
 						</div>
-						<div className=" grid grid-flow-row auto-rows-fr">
+						<div className=" grid grid-flow-row auto-rows-fr gap-8">
 							{projectsData.map((project, index) => (
 								<ProjectCard
 									key={index}
