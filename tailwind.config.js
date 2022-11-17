@@ -33,5 +33,6 @@ module.exports = {
 			desktop: { min: "1280px" },
 		},
 	},
+	darkMode: "class",
 	plugins: [],
 };
