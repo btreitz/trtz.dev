@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ThemeAninmation from "./themeAnimation";
 
-type ThemeType = "dark" | "light";
+export type ThemeType = "dark" | "light";
 
 const ThemeSwitcher = () => {
 	const [theme, setTheme] = useState<ThemeType>("dark");
@@ -31,13 +31,6 @@ const ThemeSwitcher = () => {
 		}
 	}, [theme]);
 
-	/*
-	return (
-		<button onClick={() => toggleTheme()} className=" bg-white dark:bg-red-700">
-			TT
-		</button>
-	);
-	*/
 	return <ThemeAninmation currentTheme={theme} onChange={toggleTheme} />;
 };
 

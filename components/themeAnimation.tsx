@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useSpring, animated } from "@react-spring/web";
+import { ThemeType } from "./themeSwitcher";
 
 export const animationProperties = {
 	dark: {
@@ -39,7 +40,7 @@ let REACT_TOGGLE_DARK_MODE_GLOBAL_ID = 0;
 
 type ThemeAnimationProps = {
 	onChange: () => void;
-	currentTheme: "light" | "dark";
+	currentTheme: ThemeType;
 	style?: React.CSSProperties;
 	size?: number | string;
 };

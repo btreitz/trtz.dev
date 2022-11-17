@@ -20,7 +20,7 @@ export type ProjectData = {
 
 const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
-		<div className=" min-h-screen relative bg-dark-blue text-light-beige">
+		<div className=" min-h-screen relative bg-slate-50 dark:bg-gray-900 dark:text-light-beige">
 			<Head>
 				<title>trtz.dev</title>
 				<meta name="description" content="Bastian Treitz - Software Developer" />
@@ -37,7 +37,7 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 								<ThemeSwitcher />
 							</ul>
 						</div>
-						<div className=" grid grid-flow-row auto-rows-fr gap-8 dark:bg-slate-500">
+						<div className=" grid grid-flow-row auto-rows-fr gap-8">
 							{projectsData.map((project, index) => (
 								<ProjectCard
 									key={index}
