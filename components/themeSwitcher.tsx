@@ -3,7 +3,11 @@ import ThemeAninmation from "./themeAnimation";
 
 export type ThemeType = "dark" | "light";
 
-const ThemeSwitcher = () => {
+type ThemeSwitcherProps = {
+	className?: string;
+};
+
+const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 	const [theme, setTheme] = useState<ThemeType>("dark");
 
 	useEffect(() => {
@@ -31,7 +35,7 @@ const ThemeSwitcher = () => {
 		}
 	}, [theme]);
 
-	return <ThemeAninmation currentTheme={theme} onChange={toggleTheme} />;
+	return <ThemeAninmation currentTheme={theme} onChange={toggleTheme} className={className} />;
 };
 
 export default ThemeSwitcher;
