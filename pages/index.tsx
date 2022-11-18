@@ -1,7 +1,8 @@
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import Footer from "../components/footer";
 import IconLink from "../components/iconLink";
 import ProjectCard from "../components/projectCard";
@@ -32,9 +33,23 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 						<div className="border-b border-gray-400 dark:border-gray-300 pt-5 py-2 mb-10 flex flex-row justify-between">
 							<div className=" text-2xl">trtz.dev</div>
 							<ul className="flex flex-row justify-center gap-1">
-								<IconLink href="https://linkedin.com/in/btreitz" icon={<AiFillLinkedin size={"1.5em"} />} />
-								<IconLink href="https://github.com/btreitz" icon={<AiFillGithub size={"1.5em"} />} />
-								<ThemeSwitcher className=" py-2 px-3 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
+								<li key={0}>
+									<IconLink
+										href="https://linkedin.com/in/btreitz"
+										icon={<AiFillLinkedin size={"1.5em"} />}
+										style={{ display: "block" }}
+									/>
+								</li>
+								<li key={1}>
+									<IconLink
+										href="https://github.com/btreitz"
+										icon={<AiFillGithub size={"1.5em"} />}
+										style={{ display: "block" }}
+									/>
+								</li>
+								<li key={2}>
+									<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
+								</li>
 							</ul>
 						</div>
 						<div className=" grid grid-flow-row auto-rows-fr gap-8">

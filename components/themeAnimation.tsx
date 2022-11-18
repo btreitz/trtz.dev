@@ -43,6 +43,7 @@ type ThemeAnimationProps = {
 	currentTheme: ThemeType;
 	className?: string;
 	size?: number | string;
+	style?: React.CSSProperties;
 };
 
 const ThemeAninmation = ({
@@ -50,6 +51,7 @@ const ThemeAninmation = ({
 	currentTheme: currentTheme = "light",
 	className,
 	size = 24,
+	style,
 }: ThemeAnimationProps) => {
 	const [id, setId] = React.useState(0);
 	const { circle, svg, lines, mask } = animationProperties[currentTheme];
@@ -81,7 +83,7 @@ const ThemeAninmation = ({
 	const uniqueMaskId = `circle-mask-${id}`;
 
 	return (
-		<div onClick={toggle} className={className} style={{ cursor: "pointer" }}>
+		<div onClick={toggle} className={className} style={style}>
 			<animated.svg
 				xmlns="http://www.w3.org/2000/svg"
 				width={size}

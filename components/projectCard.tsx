@@ -18,8 +18,24 @@ const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }:
 			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
 				<ul className="flex flex-row justify-center gap-1">
-					<IconLink href={githubUrl} icon={<AiFillGithub size={"1.5em"} />} title={" Checkout <Code />"} />
-					{url && <IconLink href={url} icon={<FaGlobeAmericas size={"1.5em"} />} title={"Website"} />}
+					<li key={0}>
+						<IconLink
+							href={githubUrl}
+							icon={<AiFillGithub size={"1.5em"} />}
+							title={" Checkout <Code />"}
+							style={{ display: "block" }}
+						/>
+					</li>
+					{url && (
+						<li key={1}>
+							<IconLink
+								href={url}
+								icon={<FaGlobeAmericas size={"1.5em"} />}
+								title={"Website"}
+								style={{ display: "block" }}
+							/>
+						</li>
+					)}
 				</ul>
 			</div>
 			<div className=" flex flex-row pt-4 gap-5">
