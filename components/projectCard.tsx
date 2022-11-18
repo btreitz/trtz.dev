@@ -14,24 +14,12 @@ type ProjectCardProps = {
 
 const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
-		<div className=" rounded-xl pb-6 border border-[#20222e] p-4 drop-shadow hover:drop-shadow-xl transition bg-gradient-to-t from-transparent to-card-bg">
-			<div className=" border-b border-gray-300 pb-2 flex flex-row justify-between">
+		<div className=" rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-200 to-gray-300 dark:from-transparent dark:to-gray-800">
+			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
 				<ul className="flex flex-row justify-center gap-1">
-					<IconLink
-						href={githubUrl}
-						icon={<AiFillGithub size={"1.5em"} />}
-						twStyles={" hover:bg-gray-200"}
-						title={" Checkout <Code />"}
-					/>
-					{url && (
-						<IconLink
-							href={url}
-							icon={<FaGlobeAmericas size={"1.5em"} />}
-							twStyles={" hover:bg-gray-200"}
-							title={"Website"}
-						/>
-					)}
+					<IconLink href={githubUrl} icon={<AiFillGithub size={"1.5em"} />} title={" Checkout <Code />"} />
+					{url && <IconLink href={url} icon={<FaGlobeAmericas size={"1.5em"} />} title={"Website"} />}
 				</ul>
 			</div>
 			<div className=" flex flex-row pt-4 gap-5">
@@ -39,7 +27,7 @@ const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }:
 					{description && (
 						<div>
 							<div className=" text-xl">About</div>
-							<div className=" text-gray-500 mt-2">{description}</div>
+							<div className=" dark:text-gray-400 text-gray-600 mt-2">{description}</div>
 						</div>
 					)}
 				</div>
@@ -53,7 +41,10 @@ const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }:
 									</div>
 									<div className=" flex flex-row flex-wrap gap-2">
 										{(values as unknown as string[]).map((item) => (
-											<div className=" px-2 py-1 bg-cyan-900 rounded-md hover:bg-cyan-800" key={item}>
+											<div
+												className=" px-2 py-1 rounded-md bg-cyan-600 hover:bg-opacity-80 dark:bg-cyan-900 dark:hover:bg-cyan-800"
+												key={item}
+											>
 												{item}
 											</div>
 										))}
