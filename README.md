@@ -1,6 +1,15 @@
 # trtz.dev
 
-This is a [Next.js](https://nextjs.org/) project.
+\>\> https://trtz.dev/ <<
+
+Personal website to showcase my favorite and latest public projects using technologies that interest me.
+
+## Prerequisites
+
+| Tool | Version |
+| ---- | ------- |
+| Node | 16      |
+| Npm  | 8       |
 
 ## Develop
 
@@ -9,7 +18,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-.
 
 ## Build
 
@@ -19,7 +27,7 @@ npm run build
 
 ## Deploy
 
-Automatic deployment when pushing code & merging to main
+Automatic deployment when pushing code to any branch (preview / production)
 
 or
 
