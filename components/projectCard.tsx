@@ -3,6 +3,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import IconLink from "./iconLink";
 
 type ProjectCardProps = {
+	className?: string;
 	name: string;
 	description?: string;
 	"github-url": string;
@@ -12,14 +13,32 @@ type ProjectCardProps = {
 	}[];
 };
 
-const ProjectCard = ({ name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
+const ProjectCard = ({ className = "", name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
-		<div className=" rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-200 to-gray-300 dark:from-transparent dark:to-gray-800">
+		<div
+			className={`${className} rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-200 to-gray-300 dark:from-transparent dark:to-gray-800`}
+		>
 			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
 				<ul className="flex flex-row justify-center gap-1">
-					<IconLink href={githubUrl} icon={<AiFillGithub size={"1.5em"} />} title={" Checkout <Code />"} />
-					{url && <IconLink href={url} icon={<FaGlobeAmericas size={"1.5em"} />} title={"Website"} />}
+					<li key={0}>
+						<IconLink
+							href={githubUrl}
+							icon={<AiFillGithub size={"1.5em"} />}
+							title={" Checkout <Code />"}
+							style={{ display: "block" }}
+						/>
+					</li>
+					{url && (
+						<li key={1}>
+							<IconLink
+								href={url}
+								icon={<FaGlobeAmericas size={"1.5em"} />}
+								title={"Website"}
+								style={{ display: "block" }}
+							/>
+						</li>
+					)}
 				</ul>
 			</div>
 			<div className=" flex flex-row pt-4 gap-5">

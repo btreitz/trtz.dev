@@ -5,9 +5,10 @@ export type ThemeType = "dark" | "light";
 
 type ThemeSwitcherProps = {
 	className?: string;
+	style?: React.CSSProperties;
 };
 
-const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+const ThemeSwitcher = ({ className, style }: ThemeSwitcherProps) => {
 	const [theme, setTheme] = useState<ThemeType>("dark");
 
 	useEffect(() => {
@@ -35,7 +36,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 		}
 	}, [theme]);
 
-	return <ThemeAninmation currentTheme={theme} onChange={toggleTheme} className={className} />;
+	return <ThemeAninmation currentTheme={theme} onChange={toggleTheme} className={className} style={style} />;
 };
 
 export default ThemeSwitcher;
