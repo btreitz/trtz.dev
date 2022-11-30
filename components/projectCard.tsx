@@ -24,18 +24,34 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 					<li key={0}>
 						<IconLink
 							href={githubUrl}
-							icon={<AiFillGithub size={"1.5em"} />}
+							icon={
+								<AiFillGithub
+									size={"1.5em"}
+									className={
+										" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+									}
+								/>
+							}
 							title={" Checkout <Code />"}
 							style={{ display: "block" }}
+							className={" group"}
 						/>
 					</li>
 					{url && (
 						<li key={1}>
 							<IconLink
 								href={url}
-								icon={<FaGlobeAmericas size={"1.5em"} />}
+								icon={
+									<FaGlobeAmericas
+										size={"1.5em"}
+										className={
+											" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+										}
+									/>
+								}
 								title={"Website"}
 								style={{ display: "block" }}
+								className={" group"}
 							/>
 						</li>
 					)}

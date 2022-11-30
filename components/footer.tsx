@@ -17,8 +17,16 @@ const Footer = () => {
 							>
 								<IconLink
 									href="https://linkedin.com/in/btreitz"
-									icon={<AiFillLinkedin size={"1.5em"} />}
+									icon={
+										<AiFillLinkedin
+											size={"1.5em"}
+											className={
+												" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+											}
+										/>
+									}
 									style={{ display: "block" }}
+									className={" group"}
 								/>
 							</motion.div>
 						</li>
@@ -31,8 +39,16 @@ const Footer = () => {
 							>
 								<IconLink
 									href="https://github.com/btreitz"
-									icon={<AiFillGithub size={"1.5em"} />}
+									icon={
+										<AiFillGithub
+											size={"1.5em"}
+											className={
+												" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+											}
+										/>
+									}
 									style={{ display: "block" }}
+									className={" group"}
 								/>
 							</motion.div>
 						</li>
