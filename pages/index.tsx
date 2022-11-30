@@ -17,12 +17,12 @@ export type ProjectData = {
 	url?: string;
 	stack: {
 		[key: string]: string[];
-	}[];
+	};
 };
 
 const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
-		<div className=" min-h-screen relative bg-gray-100 dark:bg-gray-900 dark:text-light-beige">
+		<div className=" min-h-screen relative bg-white dark:bg-gray-900 dark:text-light-beige">
 			<Head>
 				<title>trtz.dev</title>
 				<meta name="description" content="Bastian Treitz - Software Developer" />
@@ -77,7 +77,7 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 											animate={{ opacity: 1, x: 0 }}
 											transition={{ delay: 0.7 }}
 										>
-											<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
+											<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-500 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
 										</motion.div>
 									</li>
 								</ul>

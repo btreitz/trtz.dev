@@ -17,7 +17,7 @@ Personal website to showcase my favorite and latest public projects using techno
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Build
 
@@ -31,4 +31,4 @@ Automatic deployment when pushing code to any branch (preview / production)
 
 or
 
-manually deploy at [vercel.com](https://vercel.com/)
+manually deploy at [vercel.com](https://vercel.com/).
