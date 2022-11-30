@@ -5,7 +5,7 @@ import IconLink from "./iconLink";
 const Footer = () => {
 	return (
 		<div className="absolute bottom-0 w-full">
-			<motion.div initial={{ scaleX: 1.2 }} animate={{ scaleX: 1 }} transition={{ duration: 0.3, ease: "easeOut" }}>
+			<motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, ease: "easeOut" }}>
 				<div className="border-t border-gray-400 dark:border-gray-300 desktop:max-w-3xl laptop:w-8/12 tablet:w-9/12 phone:w-11/12 mx-auto py-2">
 					<ul className="flex flex-row justify-center gap-1">
 						<li key={0}>
