@@ -6,6 +6,7 @@ module.exports = {
 			colors: {
 				"grad-orange": "#2d3436",
 				"light-beige": "#c4c4c4",
+				"linkedin-blue": "#0e76a8",
 			},
 			fontFamily: {
 				"mono-code": "Courier New, monospace",

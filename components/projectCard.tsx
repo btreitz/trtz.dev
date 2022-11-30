@@ -10,13 +10,13 @@ type ProjectCardProps = {
 	url?: string;
 	stack: {
 		[key: string]: string[];
-	}[];
+	};
 };
 
 const ProjectCard = ({ className = "", name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
 	return (
 		<div
-			className={`${className} rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-200 to-gray-300 dark:from-transparent dark:to-gray-800`}
+			className={`${className} rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-100 to-gray-100 dark:from-transparent dark:to-gray-800`}
 		>
 			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
 				<div className="text-2xl">{name}</div>
@@ -24,18 +24,34 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 					<li key={0}>
 						<IconLink
 							href={githubUrl}
-							icon={<AiFillGithub size={"1.5em"} />}
+							icon={
+								<AiFillGithub
+									size={"1.5em"}
+									className={
+										" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+									}
+								/>
+							}
 							title={" Checkout <Code />"}
 							style={{ display: "block" }}
+							className={" group"}
 						/>
 					</li>
 					{url && (
 						<li key={1}>
 							<IconLink
 								href={url}
-								icon={<FaGlobeAmericas size={"1.5em"} />}
+								icon={
+									<FaGlobeAmericas
+										size={"1.5em"}
+										className={
+											" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+										}
+									/>
+								}
 								title={"Website"}
 								style={{ display: "block" }}
+								className={" group"}
 							/>
 						</li>
 					)}
@@ -51,27 +67,25 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 					)}
 				</div>
 				<div className=" flex-1">
-					{Object.keys(stack).length > 0 && (
-						<div>
-							{Object.entries(stack).map(([key, values]) => (
-								<div className=" mb-3" key={key}>
-									<div className=" font-bol text-lg mb-2" key={key}>
-										{key}
-									</div>
-									<div className=" flex flex-row flex-wrap gap-2">
-										{(values as unknown as string[]).map((item) => (
-											<div
-												className=" px-2 py-1 rounded-md bg-cyan-600 hover:bg-opacity-80 dark:bg-cyan-900 dark:hover:bg-cyan-800"
-												key={item}
-											>
-												{item}
-											</div>
-										))}
-									</div>
+					<div>
+						{Object.entries(stack).map(([key, values]) => (
+							<div className=" mb-3" key={key}>
+								<div className=" font-bol text-lg mb-2" key={key}>
+									{key}
 								</div>
-							))}
-						</div>
-					)}
+								<div className=" flex flex-row flex-wrap gap-2">
+									{values.map((item) => (
+										<div
+											className=" px-2 py-1 rounded-md bg-cyan-500 hover:bg-opacity-80 dark:bg-cyan-900 dark:hover:bg-cyan-800"
+											key={item}
+										>
+											{item}
+										</div>
+									))}
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -17,12 +17,12 @@ export type ProjectData = {
 	url?: string;
 	stack: {
 		[key: string]: string[];
-	}[];
+	};
 };
 
 const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
-		<div className=" min-h-screen relative bg-gray-100 dark:bg-gray-900 dark:text-light-beige">
+		<div className=" min-h-screen relative bg-white dark:bg-gray-900 dark:text-light-beige">
 			<Head>
 				<title>trtz.dev</title>
 				<meta name="description" content="Bastian Treitz - Software Developer" />
@@ -31,53 +31,65 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 			<main className=" pb-24">
 				<div className="w-full">
 					<div className=" mx-auto desktop:max-w-3xl laptop:w-8/12 tablet:w-9/12 phone:w-11/12">
-						<motion.div
-							initial={{ scaleX: 1.2 }}
-							animate={{ scaleX: 1 }}
-							transition={{ duration: 0.3, ease: "easeOut" }}
-						>
+						<motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, ease: "easeOut" }}>
 							<div className="border-b border-gray-400 dark:border-gray-300 pt-5 py-2 mb-10 flex flex-row justify-between">
 								<motion.div
 									initial={{ opacity: 0, y: "-60px" }}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.3 }}
+									transition={{ delay: 0.7 }}
 								>
 									<div className=" text-2xl">trtz.dev</div>
 								</motion.div>
 								<ul className="flex flex-row justify-center gap-1">
 									<li key={0}>
 										<motion.div
-											initial={{ opacity: 0, x: "60px" }}
-											animate={{ opacity: 1, x: 0 }}
-											transition={{ delay: 0.5 }}
+											initial={{ opacity: 0, y: "-60px" }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ delay: 1 }}
 										>
 											<IconLink
 												href="https://linkedin.com/in/btreitz"
-												icon={<AiFillLinkedin size={"1.5em"} />}
+												icon={
+													<AiFillLinkedin
+														size={"1.5em"}
+														className={
+															" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+														}
+													/>
+												}
 												style={{ display: "block" }}
+												className={" group"}
 											/>
 										</motion.div>
 									</li>
 									<li key={1}>
 										<motion.div
-											initial={{ opacity: 0, x: "60px" }}
-											animate={{ opacity: 1, x: 0 }}
-											transition={{ delay: 0.6 }}
+											initial={{ opacity: 0, y: "-60px" }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ delay: 1.2 }}
 										>
 											<IconLink
 												href="https://github.com/btreitz"
-												icon={<AiFillGithub size={"1.5em"} />}
+												icon={
+													<AiFillGithub
+														size={"1.5em"}
+														className={
+															" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+														}
+													/>
+												}
 												style={{ display: "block" }}
+												className={" group"}
 											/>
 										</motion.div>
 									</li>
 									<li key={2}>
 										<motion.div
-											initial={{ opacity: 0, x: "60px" }}
-											animate={{ opacity: 1, x: 0 }}
-											transition={{ delay: 0.7 }}
+											initial={{ opacity: 0, y: "-60px" }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ delay: 1.4 }}
 										>
-											<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
+											<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-500 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
 										</motion.div>
 									</li>
 								</ul>
@@ -89,7 +101,7 @@ const Projects = ({ projectsData }: InferGetStaticPropsType<typeof getStaticProp
 									key={index}
 									initial={{ opacity: 0, y: "30%" }}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.5 + index * 0.2 }}
+									transition={{ delay: 1.4 + index * 0.3, duration: 0.5, ease: "easeOut" }}
 								>
 									<ProjectCard
 										key={index}
