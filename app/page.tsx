@@ -54,7 +54,7 @@ async function getProjects() {
 export default async function Home() {
 	const projectsData: ProjectData[] = await getProjects();
 	return (
-		<div className=" grid grid-flow-row auto-rows-fr gap-7">
+		<div className=" grid grid-flow-row auto-rows-fr gap-5">
 			{projectsData.map((project, index) => (
 				<FramerMotionDivWrapper
 					key={index}

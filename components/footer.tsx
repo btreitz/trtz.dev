@@ -9,7 +9,7 @@ const Footer = () => {
 			animate={{ scaleX: 1 }}
 			transition={{ duration: 0.6, ease: "easeOut" }}
 		>
-			<div className=" mt-7 border-t border-gray-400 dark:border-gray-300 py-2">
+			<div className=" border-t border-gray-400 dark:border-gray-300 py-2">
 				<ul className="flex flex-row justify-center gap-1">
 					<li key={0}>
 						<FramerMotionDivWrapper
