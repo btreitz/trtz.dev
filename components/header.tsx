@@ -12,7 +12,7 @@ export default function Header() {
 				animate={{ scaleX: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
 			>
-				<div className="border-b border-gray-400 dark:border-gray-300 pt-5 py-2 mb-7 flex flex-row justify-between">
+				<div className="border-b border-gray-400 dark:border-gray-300 pt-5 py-2 flex flex-row justify-between">
 					<FramerMotionDivWrapper
 						initial={{ opacity: 0, y: "-60px" }}
 						animate={{ opacity: 1, y: 0 }}
