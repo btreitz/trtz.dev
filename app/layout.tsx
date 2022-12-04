@@ -9,8 +9,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<head />
 			<body>
-				<div className=" min-h-screen relative bg-white dark:bg-gray-900 dark:text-light-beige flex flex-col">
-					<div className=" flex flex-col flex-grow justify-between mx-auto desktop:max-w-3xl laptop:w-8/12 tablet:w-9/12 phone:w-11/12">
+				<div className=" min-h-screen bg-white dark:bg-gray-900 dark:text-light-beige flex flex-col items-center">
+					<div className=" flex flex-col flex-grow justify-between desktop:max-w-3xl laptop:w-8/12 tablet:w-9/12 phone:w-11/12">
 						<div>
 							<Header />
 							<main>{children}</main>
