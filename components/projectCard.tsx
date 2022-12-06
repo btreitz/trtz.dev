@@ -89,7 +89,7 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 														href={link}
 														target="_blank"
 														rel="noreferrer"
-														className=" transition hover:underline underline-offset-5 dark:hover:text-white"
+														className=" transition hover:underline underline-offset-2 dark:hover:text-white"
 													>
 														{label}
 													</a>

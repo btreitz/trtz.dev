@@ -6,7 +6,7 @@ import Header from "../components/header";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en" className="dark">
+		<html lang="en" className="dark bg-gray-900">
 			<head />
 			<body>
 				<div className=" min-h-screen bg-white dark:bg-gray-900 dark:text-light-beige flex flex-col items-center transition-colors">
