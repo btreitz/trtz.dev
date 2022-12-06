@@ -74,14 +74,31 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 									{key}
 								</div>
 								<div className=" flex flex-row flex-wrap gap-2">
-									{values.map((item) => (
-										<div
-											className=" px-2 py-1 rounded-md bg-cyan-500 hover:bg-opacity-80 dark:bg-cyan-900 dark:hover:bg-cyan-800"
-											key={item}
-										>
-											{item}
-										</div>
-									))}
+									{values.map((item) => {
+										const linkMatch = /^(\[(.*)\]\((.*)\))/g.exec(item);
+										const [label, link] = linkMatch
+											? linkMatch.filter((_, i) => i === 2 || i === 3)
+											: [undefined, undefined];
+										return (
+											<div
+												className=" px-2 py-1 rounded-md bg-cyan-500 hover:bg-opacity-80 dark:bg-cyan-900 dark:hover:bg-cyan-800"
+												key={item}
+											>
+												{linkMatch ? (
+													<a
+														href={link}
+														target="_blank"
+														rel="noreferrer"
+														className=" transition hover:underline underline-offset-5 dark:hover:text-white"
+													>
+														{label}
+													</a>
+												) : (
+													item
+												)}
+											</div>
+										);
+									})}
 								</div>
 							</div>
 						))}
