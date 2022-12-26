@@ -13,6 +13,7 @@ export type ProjectData = {
 	stack: {
 		[key: string]: string[];
 	};
+	bgColor: string;
 };
 
 async function getProjects() {
@@ -61,6 +62,7 @@ export default async function Home() {
 					initial={{ opacity: 0, y: "30%" }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 1.4 + index * 0.3, duration: 0.5, ease: "easeOut" }}
+					className=" overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
 				>
 					<ProjectCard
 						key={index}
@@ -70,6 +72,7 @@ export default async function Home() {
 						github-url={project["github-url"]}
 						stack={project.stack}
 						url={project.url}
+						bgColor={project.bgColor}
 					/>
 				</FramerMotionDivWrapper>
 			))}

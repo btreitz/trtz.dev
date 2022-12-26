@@ -11,5 +11,6 @@
 			"[Tailwind CSS](https://tailwindcss.com/)"
 		],
 		"Deployment & Hosting": ["[Vercel](https://vercel.com/)"]
-	}
+	},
+	"bgColor": "#49a417"
 }

@@ -8,5 +8,6 @@
 		"Frontend": ["JavaScript", "[Thymeleaf](https://www.thymeleaf.org/)"],
 		"Testing": ["[JUnit 5 Jupiter](https://junit.org/junit5/)"],
 		"Deployment & Hosting": ["[Railway](https://railway.app/)", "[Docker](https://www.docker.com/)"]
-	}
+	},
+	"bgColor": "#1749a4"
 }
