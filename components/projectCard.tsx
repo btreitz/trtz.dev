@@ -11,54 +11,65 @@ type ProjectCardProps = {
 	stack: {
 		[key: string]: string[];
 	};
+	bgColor: string;
 };
 
-const ProjectCard = ({ className = "", name, description, "github-url": githubUrl, url, stack }: ProjectCardProps) => {
+const ProjectCard = ({
+	className = "",
+	name,
+	description,
+	"github-url": githubUrl,
+	url,
+	stack,
+	bgColor,
+}: ProjectCardProps) => {
 	return (
 		<div
-			className={`${className} rounded-xl pb-6 dark:border dark:border-gray-800 p-4 shadow-md hover:shadow-lg transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-100 to-gray-100 dark:from-transparent dark:to-gray-800`}
+			className={`${className} group/card rounded-xl pb-6 dark:border dark:border-gray-800 p-4 transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-100 to-gray-100 dark:from-transparent dark:to-gray-800`}
 		>
+			<div
+				style={{ backgroundColor: bgColor }}
+				className={` absolute w-16 h-16 -top-10 -left-10 blur-[100px] transition-all duration-700 group-hover/card:w-2/4 group-hover/card:h-2/4  group-hover/card:blur-[300px]`}
+			/>
 			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
-				<div className="text-2xl">{name}</div>
-				<ul className="flex flex-row justify-center gap-1">
-					<li key={0}>
+				<div className="text-2xl z-10">{name}</div>
+				<ul className="flex flex-row justify-center gap-1 z-10">
+					<li key={0} className={" group/links"}>
 						<IconLink
 							href={githubUrl}
 							icon={
 								<AiFillGithub
 									size={"1.5em"}
 									className={
-										" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+										" group-hover/links:fill-cyan-600 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
 									}
 								/>
 							}
 							title={" Checkout <Code />"}
 							style={{ display: "block" }}
-							className={" group"}
 						/>
 					</li>
 					{url && (
-						<li key={1}>
+						<li key={1} className={" group/links"}>
 							<IconLink
 								href={url}
 								icon={
 									<FaGlobeAmericas
 										size={"1.5em"}
 										className={
-											" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+											" group-hover/links:fill-cyan-600 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
 										}
 									/>
 								}
 								title={"Website"}
 								style={{ display: "block" }}
-								className={" group"}
 							/>
 						</li>
 					)}
 				</ul>
 			</div>
 			<div className=" flex flex-row pt-4 gap-5">
-				<div className=" flex-1">
+				<div className=" flex-1 z-10">
 					{description && (
 						<div>
 							<div className=" text-xl">About</div>
@@ -66,7 +77,7 @@ const ProjectCard = ({ className = "", name, description, "github-url": githubUr
 						</div>
 					)}
 				</div>
-				<div className=" flex-1">
+				<div className=" flex-1 z-10">
 					<div>
 						{Object.entries(stack).map(([key, values]) => (
 							<div className=" mb-3" key={key}>
