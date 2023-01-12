@@ -25,7 +25,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
 	return (
 		<div
-			className={`${className} group/card rounded-xl pb-6 dark:border dark:border-gray-800 p-4 transition bg-gradient-to-b dark:bg-gradient-to-t from-gray-100 to-gray-100 dark:from-transparent dark:to-gray-800`}
+			className={`${className} group/card rounded-xl pb-6 dark:border dark:border-gray-800 p-4 transition bg-white dark:bg-gradient-to-t dark:from-dark-bg dark:to-gray-800`}
 		>
 			<div
 				style={{ backgroundColor: bgColor }}
@@ -41,7 +41,7 @@ const ProjectCard = ({
 								<AiFillGithub
 									size={"1.5em"}
 									className={
-										" group-hover/links:fill-cyan-600 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
+										" group-hover/links:fill-cyan-500 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
 									}
 								/>
 							}
@@ -57,7 +57,7 @@ const ProjectCard = ({
 									<FaGlobeAmericas
 										size={"1.5em"}
 										className={
-											" group-hover/links:fill-cyan-600 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
+											" group-hover/links:fill-cyan-500 dark:group-hover/links:fill-cyan-500 transition ease-out duration-200"
 										}
 									/>
 								}

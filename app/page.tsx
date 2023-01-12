@@ -62,7 +62,7 @@ export default async function Home() {
 					initial={{ opacity: 0, y: "30%" }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 1.4 + index * 0.3, duration: 0.5, ease: "easeOut" }}
-					className=" overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow"
+					className=" overflow-hidden rounded-xl shadow-card-md hover:shadow-card-lg transition-shadow"
 				>
 					<ProjectCard
 						key={index}
