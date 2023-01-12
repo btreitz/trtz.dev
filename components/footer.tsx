@@ -24,7 +24,7 @@ const Footer = () => {
 									<AiFillLinkedin
 										size={"1.5em"}
 										className={
-											" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+											" group-hover:fill-cyan-500 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
 										}
 									/>
 								}
@@ -46,7 +46,7 @@ const Footer = () => {
 									<AiFillGithub
 										size={"1.5em"}
 										className={
-											" group-hover:fill-cyan-600 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
+											" group-hover:fill-cyan-500 dark:group-hover:fill-cyan-500 transition ease-out duration-200"
 										}
 									/>
 								}
