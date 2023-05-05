@@ -5,6 +5,8 @@ import { AnalyticsWrapper } from "../components/analytics";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
+const WEB_URL = "https://trtz.dev";
+
 export const metadata: Metadata = {
 	title: "trtz.dev - Bastian Treitz",
 	description: "Bastian Treitz - Software Developer - Personal website about some of my public projects",
@@ -24,6 +26,13 @@ export const metadata: Metadata = {
 		siteName: "trtz.dev",
 		locale: "en-US",
 		type: "website",
+		images: [
+			{
+				url: `${WEB_URL}/images/og.png`,
+				width: 900,
+				height: 350,
+			},
+		],
 	},
 	themeColor: "#0b101b",
 };
