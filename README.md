@@ -6,15 +6,19 @@ Personal website to showcase my favorite and latest public projects using techno
 
 ## Prerequisites
 
-| Tool | Version |
-| ---- | ------- |
-| Node | 16      |
-| Npm  | 8       |
+| Tool       | Version |
+| ---------- | ------- |
+| Node       | 18      |
+| npm / pnpm | 9 / 8   |
 
 ## Develop
 
 ```bash
-npm run dev
+pnpm install
+```
+
+```bash
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -22,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ## Deploy
