@@ -4,6 +4,35 @@ import ProjectCard from "../components/projectCard";
 import FramerMotionDivWrapper from "../components/framerMotionDivWrapper";
 import projectsJson from "../projectData/projects.json";
 
+export default async function Home() {
+	const projectsData: ProjectData[] = await getProjects();
+	return (
+		<div className=" grid grid-flow-row auto-rows-fr gap-5">
+			{projectsData.map((project, index) => (
+				<FramerMotionDivWrapper
+					key={index}
+					initial={{ opacity: 0, y: "30%" }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 1.4 + index * 0.3, duration: 0.5, ease: "easeOut" }}
+					className=" overflow-hidden rounded-xl shadow-card-md hover:shadow-card-lg transition-shadow"
+				>
+					<ProjectCard
+						key={index}
+						className=" h-full"
+						name={project.name}
+						description={project.description}
+						github-url={project["github-url"]}
+						stack={project.stack}
+						url={project.url}
+						startedDate={project.startedDate}
+						bgColor={project.bgColor}
+					/>
+				</FramerMotionDivWrapper>
+			))}
+		</div>
+	);
+}
+
 export type ProjectData = {
 	name: string;
 	api?: string;
@@ -13,6 +42,7 @@ export type ProjectData = {
 	stack: {
 		[key: string]: string[];
 	};
+	startedDate: string;
 	bgColor: string;
 };
 
@@ -50,32 +80,4 @@ async function getProjects() {
 		});
 	}
 	return projectsData;
-}
-
-export default async function Home() {
-	const projectsData: ProjectData[] = await getProjects();
-	return (
-		<div className=" grid grid-flow-row auto-rows-fr gap-5">
-			{projectsData.map((project, index) => (
-				<FramerMotionDivWrapper
-					key={index}
-					initial={{ opacity: 0, y: "30%" }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 1.4 + index * 0.3, duration: 0.5, ease: "easeOut" }}
-					className=" overflow-hidden rounded-xl shadow-card-md hover:shadow-card-lg transition-shadow"
-				>
-					<ProjectCard
-						key={index}
-						className=" h-full"
-						name={project.name}
-						description={project.description}
-						github-url={project["github-url"]}
-						stack={project.stack}
-						url={project.url}
-						bgColor={project.bgColor}
-					/>
-				</FramerMotionDivWrapper>
-			))}
-		</div>
-	);
 }
