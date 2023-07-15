@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 	title: "trtz.dev - Bastian Treitz",
 	description: "Bastian Treitz - Software Developer - Personal website about some of my public projects",
 	icons: {
-		icon: "/images/icon.png",
+		icon: "/images/trtz.png",
 	},
 	applicationName: "trtz.dev",
 	referrer: "origin-when-cross-origin",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: `${WEB_URL}/images/og.png`,
-				width: 900,
-				height: 350,
+				url: `${WEB_URL}/images/trtz.png`,
+				width: 300,
+				height: 300,
 			},
 		],
 	},
