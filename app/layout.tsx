@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: `${WEB_URL}/images/trtz.png`,
-				width: 300,
-				height: 300,
+				url: `/images/trtz.png`,
+				width: 100,
+				height: 100,
 			},
 		],
 	},
