@@ -11,6 +11,7 @@ type ProjectCardProps = {
 	stack: {
 		[key: string]: string[];
 	};
+	startedDate: string;
 	bgColor: string;
 };
 
@@ -21,6 +22,7 @@ const ProjectCard = ({
 	"github-url": githubUrl,
 	url,
 	stack,
+	startedDate,
 	bgColor,
 }: ProjectCardProps) => {
 	return (
@@ -32,7 +34,12 @@ const ProjectCard = ({
 				className={` absolute w-16 h-16 -top-10 -left-10 blur-[100px] transition-all duration-700 group-hover/card:w-2/4 group-hover/card:h-2/4  group-hover/card:blur-[300px]`}
 			/>
 			<div className=" border-b border-gray-400 dark:border-gray-300 pb-2 flex flex-row justify-between">
-				<div className="text-2xl z-10">{name}</div>
+				<div className="text-2xl z-10">
+					{name}{" "}
+					<span className=" opacity-50 tablet:opacity-0 tablet:group-hover/card:opacity-50 transition-opacity duration-200 ease-in-out text-sm align-middle">
+						[{startedDate}]
+					</span>
+				</div>
 				<ul className="flex flex-row justify-center gap-1 z-10">
 					<li key={0} className={" group/links"}>
 						<IconLink
