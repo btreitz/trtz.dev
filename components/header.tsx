@@ -63,15 +63,6 @@ export default function Header() {
 								/>
 							</FramerMotionDivWrapper>
 						</li>
-						<li key={2}>
-							<FramerMotionDivWrapper
-								initial={{ opacity: 0, y: "-60px" }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ delay: 1.2 }}
-							>
-								<ThemeSwitcher className=" cursor-pointer py-2 px-3 rounded-xl hover:bg-gray-500 dark:hover:bg-gray-100 hover:bg-opacity-10 dark:hover:bg-opacity-10" />
-							</FramerMotionDivWrapper>
-						</li>
 					</ul>
 				</div>
 			</FramerMotionDivWrapper>

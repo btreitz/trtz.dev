@@ -1,0 +1,20 @@
+{
+	"name": "Ecom Demo",
+	"api": "https://api.github.com/repos/btreitz/ecom-demo",
+	"github-url": "https://github.com/btreitz/ecom-demo",
+	"url": "https://ecom-demo-nine.vercel.app/",
+	"stack": {
+		"Client & Server": [
+			"[Next.js 13](https://nextjs.org/)",
+			"[React](https://reactjs.org/)",
+			"[TypeScript](https://www.typescriptlang.org/)",
+			"[Shopify Storefront API](https://shopify.dev/docs/api/storefront)",
+			"[Apollo GraphQL](https://www.apollographql.com/)",
+			"[Tailwind CSS](https://tailwindcss.com/)"
+		],
+		"Image Generation": ["[Midjourney](https://www.midjourney.com/home)"],
+		"Deployment & Hosting": ["[Vercel](https://vercel.com/)"]
+	},
+	"startedDate": "2023",
+	"bgColor": "#7217A4"
+}
