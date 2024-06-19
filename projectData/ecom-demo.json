@@ -5,7 +5,7 @@
 	"url": "https://ecom-demo-nine.vercel.app/",
 	"stack": {
 		"Client & Server": [
-			"[Next.js 13](https://nextjs.org/)",
+			"[Next.js 14](https://nextjs.org/)",
 			"[React](https://reactjs.org/)",
 			"[TypeScript](https://www.typescriptlang.org/)",
 			"[Shopify Storefront API](https://shopify.dev/docs/api/storefront)",
