@@ -1,7 +1,7 @@
 {
 	"name": "Ecom Demo",
-	"api": "https://api.github.com/repos/btreitz/ecom-demo",
-	"github-url": "https://github.com/btreitz/ecom-demo",
+	"api": "https://api.github.com/repos/btreitz/nextjs-shopify-ecom-demo",
+	"github-url": "https://github.com/btreitz/nextjs-shopify-ecom-demo",
 	"url": "https://ecom-demo-nine.vercel.app/",
 	"stack": {
 		"Client & Server": [
