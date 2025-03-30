@@ -10,11 +10,7 @@
 		],
 		"Frontend": ["JavaScript", "[Thymeleaf](https://www.thymeleaf.org/)"],
 		"Testing": ["[JUnit 5](https://junit.org/junit5/)"],
-		"Deployment & Hosting": [
-			"Self-hosted",
-			"[Docker](https://www.docker.com/)",
-			"Prev. [Railway](https://railway.app/)"
-		]
+		"Deployment & Hosting": ["Self-hosted", "[Docker](https://www.docker.com/)"]
 	},
 	"startedDate": "2020",
 	"bgColor": "#1749a4"
