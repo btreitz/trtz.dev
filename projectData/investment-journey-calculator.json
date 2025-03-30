@@ -4,10 +4,13 @@
 	"github-url": "https://github.com/btreitz/investment-journey-calculator",
 	"url": "https://investmentjourneycalc.com/",
 	"stack": {
-		"Backend": ["Java 17", "[Spring Boot 2](https://spring.io/projects/spring-boot)"],
+		"Backend": [
+			"Java 17",
+			"[Spring Boot 2](https://spring.io/projects/spring-boot)"
+		],
 		"Frontend": ["JavaScript", "[Thymeleaf](https://www.thymeleaf.org/)"],
 		"Testing": ["[JUnit 5](https://junit.org/junit5/)"],
-		"Deployment & Hosting": ["[Railway](https://railway.app/)", "[Docker](https://www.docker.com/)"]
+		"Deployment & Hosting": ["Self-hosted", "[Docker](https://www.docker.com/)"]
 	},
 	"startedDate": "2020",
 	"bgColor": "#1749a4"
